@@ -11,20 +11,10 @@ import {
   Flex,
 } from "@chakra-ui/react"
 import { ColorModeSwitcher } from "./ColorModeSwitcher"
-import Header from "./components/Header"
 import Body from "./components/Body"
 // 
 export const App = () => (
   <ChakraProvider theme={theme}>
-    <Box textAlign="center" fontSize="xl">
-      <Flex>
-      <Header />
-      
-      </Flex>
-      
-      <Grid minH="90vh" p={3}>
-        <Body />
-      </Grid>
-    </Box>
+    <Body/>
   </ChakraProvider>
 )
