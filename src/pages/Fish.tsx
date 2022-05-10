@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function Fish() {
   return (
-    <div>Fish</div>
+    <div style={{marginTop:"50px"}}>Fish</div>
   )
 }
