@@ -1,9 +1,9 @@
 import React from 'react'
-
+import CatList from './Cats/CatList'
 export default function Cat() {
   return (
-    <div className="">
-      <h1>Cat</h1>
+    <div>
+      <CatList />
     </div>
   )
 }
