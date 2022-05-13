@@ -63,9 +63,29 @@ const catsSlice = createSlice({
     reducers: {
         catAdded(state, action) {
             state.push(action.payload);
-          },
+        },
+        catUpdated(state, action) {
+            const {name, food, weight, health, age , img } = action.payload;
+            const existingCat = state.find((cat) => cat.name === name);
+            if (existingCat) {
+                existingCat.name = name;
+                existingCat.food = food;
+                existingCat.weight = weight;
+                existingCat.health = health;
+                existingCat.age = age;
+                existingCat.img = img;
+
+            }
+        },
+        deleteCat: (state, action) =>{
+            const { id } = action.payload;
+            const existingCat = state.find((cat) => cat.id === id);
+            if (existingCat) {
+              return state.filter((cat) => cat.id !== id);
+            }
+        },
     },
 });
-export const { catAdded } = catsSlice.actions;
+export const { catAdded, deleteCat ,catUpdated } = catsSlice.actions;
 
 export default catsSlice.reducer;

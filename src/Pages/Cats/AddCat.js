@@ -27,17 +27,18 @@ export default function AddUser() {
           dispatch(
             catAdded({
               id: Number(usersAmount + 1),
-              name,
-              food,
-              weight,
-              health,
-              age,
-              img,
+              name:name,
+              food:food,
+              weight:weight,
+              health:health,
+              age:age,
+              img:img
             })
           )
         } else {
-          alert("Fill in all fields"+usersAmount);
-          console.log("name"+name+usersAmount)
+           
+          alert("Fill in all fields      "+name);
+          console.log(name)
         }
     
         setName("");
@@ -63,42 +64,40 @@ export default function AddUser() {
                                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div className="modal-body">
-                                <form>
                                     <div className="row">
-                                        <div class="col-3 mb-3">
-                                            <label class="form-label">Name
-                                                <input type="text" onchange={(e) => setName(e.target.value)}class="form-control" />
+                                        <div className="col-3 mb-3">
+                                            <label className="form-label">Name
+                                                <input type="text" value={name} onChange={handleName} className="form-control" />
                                             </label>
                                         </div>
-                                        <div class="col-3 mb-3">
-                                            <label class="form-label">Food
-                                                <input type="text" onchange={handleFood} class="form-control" />
+                                        <div className="col-3 mb-3">
+                                            <label className="form-label">Food
+                                                <input type="text" value={food} onChange={handleFood} className="form-control" />
                                             </label>
                                         </div>
-                                        <div class="col-3 mb-3">
-                                            <label class="form-label">Weight
-                                                <input type="number"  onchange={handleWeight} class="form-control" />
+                                        <div className="col-3 mb-3">
+                                            <label className="form-label">Weight
+                                                <input type="number" value={weight} onChange={handleWeight} className="form-control" />
                                             </label>
                                         </div>
-                                        <div class="col-3 mb-3">
-                                            <label class="form-label">Health
-                                                <input type="text"  onchange={handleHealth} class="form-control" />
+                                        <div className="col-3 mb-3">
+                                            <label className="form-label">Health
+                                                <input type="text" value={health}  onChange={handleHealth} className="form-control" />
                                             </label>
                                         </div>
                                     </div>
                                     <div className="row">
-                                    <div class="col-6 mb-3">
-                                            <label class="form-label">Age
-                                                <input type="number" onchange={handleAge} class="form-control" />
+                                    <div className="col-6 mb-3">
+                                            <label className="form-label">Age
+                                                <input type="number" value={age} onChange={handleAge} className="form-control" />
                                             </label>
                                         </div>
-                                        <div class="col-6  mb-3">
-                                            <label class="form-label">Img Link
-                                                <input type="text" onchange={handleImg} class="form-control" />
+                                        <div className="col-6  mb-3">
+                                            <label className="form-label">Img Link
+                                                <input type="text" value={img} onChange={handleImg} className="form-control" />
                                             </label>
                                         </div>
                                     </div>
-                                </form>
                             </div>
                             <div className="modal-footer">
                                 <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
