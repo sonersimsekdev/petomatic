@@ -65,8 +65,8 @@ const catsSlice = createSlice({
             state.push(action.payload);
         },
         catUpdated(state, action) {
-            const {name, food, weight, health, age , img } = action.payload;
-            const existingCat = state.find((cat) => cat.name === name);
+            const {id, name, food, weight, health, age , img } = action.payload;
+            const existingCat = state.find((cat) => cat.id === id);
             if (existingCat) {
                 existingCat.name = name;
                 existingCat.food = food;
@@ -74,7 +74,6 @@ const catsSlice = createSlice({
                 existingCat.health = health;
                 existingCat.age = age;
                 existingCat.img = img;
-
             }
         },
         deleteCat: (state, action) =>{

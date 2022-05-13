@@ -1,8 +1,8 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector} from "react-redux";
 import EditCat from "./EditCat";
 import DeleteCat from "./DeleteCat";
 
-export default function UserList() {
+export default function CatList() {
   const cats = useSelector((state) => state.cats);
 
 
@@ -10,14 +10,15 @@ export default function UserList() {
   return (
     <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
       {cats.map(({ id, name, food, weight, health, age, img }) => (
-        <div className="col" key={id}>
+        <div className="col" key={id} >
           <div className="card shadow-sm">
             <img
               src={img}
               className=" card-img-top "
               width="100%"
               height="250"
-              role="img"
+            
+              alt={name}
             />
             <div className="card-body">
               <p className="card-text">Name: {name}</p>
@@ -36,7 +37,7 @@ export default function UserList() {
                 </li>
               </ul>
               <div className="d-flex">
-                <div> <EditCat /></div>
+                <div> <EditCat id_={id} name_={name} food_={food} weight_={weight} health_={health} age_={age} img_={img} /></div>
                 <div><DeleteCat id={id} /></div>
               </div>
             </div>

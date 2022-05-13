@@ -37,7 +37,7 @@ export default function AddUser() {
           )
         } else {
            
-          alert("Fill in all fields      "+name);
+          alert("Fill in all fields");
           console.log(name)
         }
     
