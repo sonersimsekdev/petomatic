@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
-import { catUpdated } from "..//..//redux/CatSlice";
+import { fishUpdated } from "../../redux/FishSlice";
 
-export default function EditCat({ catid_ , name_, food_, weight_, health_, age_, img_}) {
+export default function EditFish({ fishid_ , name_, food_, weight_, health_, age_, img_}) {
 
-  const cat = useSelector((state) =>
-  state.cats.find((cats) => cats.name === name_)
+  const fish = useSelector((state) =>
+  state.fishies.find((fishies) => fishies.name === name_)
 );
 
 
@@ -33,7 +33,7 @@ export default function EditCat({ catid_ , name_, food_, weight_, health_, age_,
   const handleClick = () => {
     if (name && food && weight && health && age && img) {
       dispatch(
-        catUpdated({
+        fishUpdated({
           name: name,
           food: food,
           weight: weight,
@@ -72,7 +72,7 @@ export default function EditCat({ catid_ , name_, food_, weight_, health_, age_,
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
-              <h5 className="modal-title" id="exampleModalLabel">Edit Cat</h5>
+              <h5 className="modal-title" id="exampleModalLabel">Edit Fish</h5>
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div className="modal-body">

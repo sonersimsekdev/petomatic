@@ -10,6 +10,7 @@ import Cat from './Pages/Cat';
 import Dog from './Pages/Dog';
 import Bird from './Pages/Bird';
 import Navbar from './Components/Navbar';
+import SignIn from './Pages/SignIn';
 function App() {
   return (
     <BrowserRouter>
@@ -20,9 +21,9 @@ function App() {
             <Route path="dog" element={<Dog />} />
             <Route path="bird" element={<Bird />} />
           </Route>
-      {/*<Route path="/login" element={<SıgnIn />} />*/}
+          <Route path="/login" element={<SignIn />}/>
       </Routes>
-      </BrowserRouter>
+    </BrowserRouter>
   );
 }
 

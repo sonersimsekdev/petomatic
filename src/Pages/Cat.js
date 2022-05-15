@@ -9,7 +9,7 @@ export default function Cat() {
         <div className="row py-lg-5">
           <div className="col-lg-6 col-md-8 mx-auto">
             <h1 className="fw-light">Cat's Page</h1>
-            <p className="lead text-muted">You can manage all cat's your own</p>
+            <p className="lead text-muted">You can manage all cats on your own</p>
             <p>
               <div className="container">
                 <AddCat />

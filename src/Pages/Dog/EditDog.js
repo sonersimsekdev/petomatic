@@ -1,16 +1,16 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
-import { catUpdated } from "..//..//redux/CatSlice";
+import { dogUpdated } from "..//..//redux/DogSlice";
 
-export default function EditCat({ catid_ , name_, food_, weight_, health_, age_, img_}) {
+export default function EditDog({ dogid_, name_, food_, weight_, health_, age_, img_ }) {
 
-  const cat = useSelector((state) =>
-  state.cats.find((cats) => cats.name === name_)
-);
+  const dog = useSelector((state) =>
+    state.dogs.find((dogs) => dogs.name === name_)
+  );
 
 
   const dispatch = useDispatch();
- //propları verirsem hep tekir çıkıyo
+  //propları verirsem hep tekir çıkıyo
 
   const [name, setName] = useState("");
   const [food, setFood] = useState("");
@@ -19,7 +19,7 @@ export default function EditCat({ catid_ , name_, food_, weight_, health_, age_,
   const [age, setAge] = useState("");
   const [img, setImg] = useState("");
 
-  
+
   function handleName(e) { setName(e.target.value) };
   function handleFood(e) { setFood(e.target.value) };
   function handleWeight(e) { setWeight(Number(e.target.value)) };
@@ -27,13 +27,13 @@ export default function EditCat({ catid_ , name_, food_, weight_, health_, age_,
   function handleImg(e) { setImg(e.target.value) };
   function handleAge(e) { setAge(Number(e.target.value)) };
 
-  
+
 
 
   const handleClick = () => {
     if (name && food && weight && health && age && img) {
       dispatch(
-        catUpdated({
+        dogUpdated({
           name: name,
           food: food,
           weight: weight,
@@ -43,12 +43,7 @@ export default function EditCat({ catid_ , name_, food_, weight_, health_, age_,
         })
       );
     }
-    setName("");
-    setFood("");
-    setWeight("");
-    setHealth("");
-    setImg("");
-    setAge("");
+    
   };
 
   const handleClose = () => {
@@ -62,17 +57,14 @@ export default function EditCat({ catid_ , name_, food_, weight_, health_, age_,
 
   return (
     <>
-
       <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
         Edit
       </button>
-
-
       <div className="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
-              <h5 className="modal-title" id="exampleModalLabel">Edit Cat</h5>
+              <h5 className="modal-title" id="exampleModalLabel">Edit Dog</h5>
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div className="modal-body">
