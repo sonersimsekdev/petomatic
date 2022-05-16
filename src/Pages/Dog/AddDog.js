@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { useDispatch , useSelector } from "react-redux";
 import { dogAdded } from "../../redux/DogSlice";
-
+import { useTranslation } from 'react-i18next';
 export default function AddDog() {
 
     const dispatch = useDispatch();
     const dogs = useSelector((state) => state.dogs.length);
+    const { t } = useTranslation();
 
     const [name, setName] = useState("");
     const [food, setFood] = useState("");
@@ -54,64 +55,62 @@ export default function AddDog() {
         <>
             <div>
                 <button type="button" className="btn btn-primary me-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                    Add Dog
+                {t('addDog')}
                 </button>
-                <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"  aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div className="modal-dialog">
                         <div className="modal-content">
                             <div className="modal-header">
-                                <h5 className="modal-title" id="staticBackdropLabel">Add Dog</h5>
+                                <h5 className="modal-title" id="staticBackdropLabel">{t('addDog')}</h5>
                                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div className="modal-body">
                                 <div className="row">
                                     <div className="col-3 mb-3">
-                                        <label className="form-label">Name
+                                        <label className="form-label">{t('name')}
                                             <input type="text" value={name} onChange={handleName} className="form-control" />
                                         </label>
                                     </div>
                                     <div className="col-3 mb-3">
-                                        <label className="form-label">Food
-                                            <select class="form-select" aria-label="Default select example" onChange={handleFood}>
-                                                <option selected>Choose food level</option>
-                                                <option value="Low">Low</option>
-                                                <option value="Middle">Middle</option>
-                                                <option value="High">High</option>
+                                        <label className="form-label">{t('foodLevel')}
+                                            <select className="form-select" aria-label="Default select example" onChange={handleFood}>
+                                                <option value={t('low')}>{t('low')}</option>
+                                                <option value={t('medium')}>{t('medium')}</option>
+                                                <option value={t('high')}>{t('high')}</option>
                                             </select>
                                         </label>
                                     </div>
                                     <div className="col-3 mb-3">
-                                        <label className="form-label">Weight
+                                        <label className="form-label">{t('weight')}
                                             <input type="number" value={weight} min={0} max={100} onChange={handleWeight} className="form-control" />
                                         </label>
                                     </div>
                                     <div className="col-3 mb-3">
-                                        <label className="form-label">Health
-                                        <select class="form-select" aria-label="Default select example" onChange={handleHealth}>
-                                                <option selected>Choose health level</option>
-                                                <option value="Low">Low</option>
-                                                <option value="Middle">Middle</option>
-                                                <option value="High">High</option>
+                                        <label className="form-label">{t('healthLevel')}
+                                            <select className="form-select" aria-label="Default select example" onChange={handleHealth}>
+                                            <option value={t('low')}>{t('low')}</option>
+                                                <option value={t('medium')}>{t('medium')}</option>
+                                                <option value={t('high')}>{t('high')}</option>
                                             </select>
                                         </label>
                                     </div>
                                 </div>
                                 <div className="row">
                                     <div className="col-6 mb-3">
-                                        <label className="form-label">Age
+                                        <label className="form-label">{t('age')}
                                             <input type="number" value={age} min={0} max={100} onChange={handleAge} className="form-control" />
                                         </label>
                                     </div>
                                     <div className="col-6  mb-3">
-                                        <label className="form-label">Img Link
+                                        <label className="form-label">{t('Imglink')}
                                             <input type="text" value={img} onChange={handleImg} className="form-control" />
                                         </label>
                                     </div>
                                 </div>
                             </div>
                             <div className="modal-footer">
-                                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                <button  onClick={handleClick}  className="btn btn-success">Add</button>
+                                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">{t('cancel')}</button>
+                                <button onClick={handleClick} className="btn btn-success">{t('add')}</button>
                             </div>
                         </div>
                     </div>

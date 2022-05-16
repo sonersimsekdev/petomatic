@@ -1,18 +1,14 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useState } from "react";
-import { catUpdated } from "..//..//redux/CatSlice";
+import { birdUpdated } from "../../redux/BirdSlice";
 import { useTranslation } from 'react-i18next';
+export default function EditBird({ name_}) {
 
-export default function EditCat({ catid_ , name_, food_, weight_, health_, age_, img_}) {
-
-  /*const cat = useSelector((state) =>
-  state.cats.find((cats) => cats.name === name_)
-);*/
-
-  const { t } = useTranslation();
+ 
 
   const dispatch = useDispatch();
- //propları verirsem hep tekir çıkıyo
+
+  const { t } = useTranslation();
 
   const [name, setName] = useState("");
   const [food, setFood] = useState("");
@@ -29,13 +25,11 @@ export default function EditCat({ catid_ , name_, food_, weight_, health_, age_,
   function handleImg(e) { setImg(e.target.value) };
   function handleAge(e) { setAge(Number(e.target.value)) };
 
-  
-
 
   const handleClick = () => {
     if (name && food && weight && health && age && img) {
       dispatch(
-        catUpdated({
+        birdUpdated({
           name: name,
           food: food,
           weight: weight,
@@ -66,13 +60,15 @@ export default function EditCat({ catid_ , name_, food_, weight_, health_, age_,
     <>
 
       <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      {t('edit')}
+        {t('edit')}
       </button>
+
+
       <div className="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
-              <h5 className="modal-title" id="exampleModalLabel">{t('editCat')}</h5>
+              <h5 className="modal-title" id="exampleModalLabel">{t('editBird')}</h5>
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div className="modal-body">
@@ -120,7 +116,7 @@ export default function EditCat({ catid_ , name_, food_, weight_, health_, age_,
                                 </div>
                             </div>
             <div className="modal-footer">
-              <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={handleClose}>{t('close')}</button>
+              <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={handleClose}>{t('edit')}</button>
               <button type="button" className="btn btn-primary" onClick={handleClick}>{t('saveChanges')}</button>
             </div>
           </div>

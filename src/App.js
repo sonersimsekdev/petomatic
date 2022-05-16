@@ -4,7 +4,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-
+import './i18n/config';
 import Fish from './Pages/Fish';
 import Cat from './Pages/Cat';
 import Dog from './Pages/Dog';
@@ -14,14 +14,13 @@ import SignIn from './Pages/SignIn';
 function App() {
   return (
     <BrowserRouter>
+    <Navbar />
       <Routes>
-          <Route path="/" element={<Navbar />} >
-            <Route path="fish" element={<Fish />} />
-            <Route path="cat" element={<Cat />} />
-            <Route path="dog" element={<Dog />} />
-            <Route path="bird" element={<Bird />} />
-          </Route>
-          <Route path="/login" element={<SignIn />}/>
+          <Route path="/login" element={<SignIn />} />
+          <Route path="/fish" element={<Fish />} />
+          <Route path="/cat" element={<Cat />} />
+          <Route path="/dog" element={<Dog />} />
+          <Route path="/bird" element={<Bird />} />
       </Routes>
     </BrowserRouter>
   );

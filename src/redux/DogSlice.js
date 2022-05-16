@@ -8,7 +8,7 @@ const initialState = [
         weight: 1,
         health: "Good",
         age: 2,
-        img: "https://iaftm.tmgrup.com.tr/65f129/1200/627/0/36/855/483?u=https://iftm.tmgrup.com.tr/2021/12/07/kopek-bakimi-nasil-yapilir-ev-kopekleri-nasil-beslenir-evde-kopek-bakmak-zor-mu-1638862993469.jpeg"
+        img: "https://dxcgs7v732qty.cloudfront.net/k%C3%B6pekler.jpg"
     },
     {
         id: 2,
@@ -17,7 +17,7 @@ const initialState = [
         weight: 2,
         health: "Good",
         age: 3,
-        img: "https://petokulu.com/wp-content/uploads/2020/11/yavru-kopek-mamasi-nasil-secilir.jpg"
+        img: "https://images.petlebi.com/v7/ptlb/up/gallery/sibirya-kurdu-527.jpg"
     },
     {
         id: 3,
@@ -26,16 +26,16 @@ const initialState = [
         weight: 3,
         health: "Good",
         age: 4,
-        img: "https://oyhaber.net/d/gallery/55_s.jpg"
+        img: "https://cdnntr1.img.sputniknews.com/img/07e5/06/05/1044664307_0:0:1280:720_1920x0_80_0_0_90cb504ef646ebd6a79d4eca101ea2b5.jpg"
     },
     {
         id: 4,
-        name: "Taoblo",
+        name: "Nemo",
         food: "High",
         weight: 4,
         health: "Good",
         age: 5,
-        img: "https://st1.myideasoft.com/shop/ar/09/myassets/blogs/yavru-kopek.jpg?revision=1558388492"
+        img: "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/1728000/pitbul-aa-1729066_2.jpg"
     },
     {
         id: 5,
@@ -44,7 +44,7 @@ const initialState = [
         weight: 5,
         health: "Good",
         age: 6,
-        img: "https://images.petlebi.com/v7/ptlb/up/gallery/sibirya-kurdu-527.jpg"
+        img: "https://i4.hurimg.com/i/hurriyet/75/750x422/5e5771550f254405d052eb10.jpg"
     },
     
 ];

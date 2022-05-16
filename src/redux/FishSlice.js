@@ -8,7 +8,7 @@ const initialState = [
         weight: 1,
         health: "Good",
         age: 2,
-        img: "https://ichef.bbci.co.uk/news/640/cpsprodpb/16FA9/production/_92712149_gettyimages-480164327.jpg"
+        img: "https://upload.wikimedia.org/wikipedia/commons/7/7d/Discus_fish.jpg"
     },
     {
         id: 2,
@@ -17,7 +17,7 @@ const initialState = [
         weight: 2,
         health: "Good",
         age: 3,
-        img: "https://i.cnnturk.com/i/cnnturk/75/740x416/602d00735cf3b01e7cb045c0.jpg"
+        img: "https://iatkv.tmgrup.com.tr/318b6c/616/321/0/49/800/466?u=https://itkv.tmgrup.com.tr/2019/02/01/ruyada-balik-yemek-neye-isarettir-1549004356635.jpg"
     },
     {
         id: 3,
@@ -26,7 +26,7 @@ const initialState = [
         weight: 3,
         health: "Good",
         age: 4,
-        img: "https://petify-cdn.s3.eu-west-1.amazonaws.com/ehs/media/82/c0633fc0f5e95d589aed13bd727f46f3.jpg"
+        img: "https://i2.milimaj.com/i/milliyet/75/0x410/6165478d86b2451ed054b32f.jpg"
     },
     {
         id: 4,
@@ -35,7 +35,7 @@ const initialState = [
         weight: 4,
         health: "Good",
         age: 5,
-        img: "https://cunkubaskasenyok.com/wp-content/uploads/2021/10/En-Cok-Tercih-Edilen-Kedi-Cinsleri-.jpg"
+        img: "https://cdn.evrimagaci.org/FW24qEKFsyZNGueueIYarpkC7g8=/evrimagaci.org%2Fpublic%2Fcontent_media%2F00401bed255973ed744ef834471292d3.jpg"
     },
    
 ];

@@ -1,18 +1,17 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { fishUpdated } from "../../redux/FishSlice";
+import { useTranslation } from 'react-i18next';
 
 export default function EditFish({ fishid_ , name_, food_, weight_, health_, age_, img_}) {
 
-  const fish = useSelector((state) =>
-  state.fishies.find((fishies) => fishies.name === name_)
-);
+  const { t } = useTranslation();
+
 
 
   const dispatch = useDispatch();
- //propları verirsem hep tekir çıkıyo
 
-  const [name, setName] = useState("");
+  const [name, setName] = useState ("");
   const [food, setFood] = useState("");
   const [weight, setWeight] = useState("");
   const [health, setHealth] = useState("");
@@ -63,71 +62,67 @@ export default function EditFish({ fishid_ , name_, food_, weight_, health_, age
   return (
     <>
 
-      <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Edit
-      </button>
-
-
-      <div className="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h5 className="modal-title" id="exampleModalLabel">Edit Fish</h5>
-              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div className="modal-body">
-                                <div className="row">
-                                    <div className="col-3 mb-3">
-                                        <label className="form-label">Name
-                                            <input type="text" value={name} onChange={handleName} className="form-control" />
-                                        </label>
-                                    </div>
-                                    <div className="col-3 mb-3">
-                                        <label className="form-label">Food
-                                            <select class="form-select" aria-label="Default select example" onChange={handleFood}>
-                                                <option selected>Choose food level</option>
-                                                <option value="Low">Low</option>
-                                                <option value="Middle">Middle</option>
-                                                <option value="High">High</option>
-                                            </select>
-                                        </label>
-                                    </div>
-                                    <div className="col-3 mb-3">
-                                        <label className="form-label">Weight
-                                            <input type="number" value={weight} min={0} max={100} onChange={handleWeight} className="form-control" />
-                                        </label>
-                                    </div>
-                                    <div className="col-3 mb-3">
-                                        <label className="form-label">Health
-                                        <select class="form-select" aria-label="Default select example" onChange={handleHealth}>
-                                                <option selected>Choose health level</option>
-                                                <option value="Low">Low</option>
-                                                <option value="Middle">Middle</option>
-                                                <option value="High">High</option>
-                                            </select>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div className="row">
-                                    <div className="col-6 mb-3">
-                                        <label className="form-label">Age
-                                            <input type="number" value={age} min={0} max={100} onChange={handleAge} className="form-control" />
-                                        </label>
-                                    </div>
-                                    <div className="col-6  mb-3">
-                                        <label className="form-label">Img Link
-                                            <input type="text" value={img} onChange={handleImg} className="form-control" />
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-            <div className="modal-footer">
-              <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={handleClose}>Close</button>
-              <button type="button" className="btn btn-primary" onClick={handleClick}>Save changes</button>
-            </div>
+    <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    {t('edit')}
+    </button>
+    <div className="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div className="modal-dialog">
+        <div className="modal-content">
+          <div className="modal-header">
+            <h5 className="modal-title" id="exampleModalLabel">{t('editFish')}</h5>
+            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div className="modal-body">
+                              <div className="row">
+                                  <div className="col-3 mb-3">
+                                      <label className="form-label">{t('name')}
+                                          <input type="text" value={name} onChange={handleName} className="form-control" />
+                                      </label>
+                                  </div>
+                                  <div className="col-3 mb-3">
+                                      <label className="form-label">{t('foodLevel')}
+                                          <select className="form-select" aria-label="Default select example" onChange={handleFood}>
+                                              <option value={t('low')}>{t('low')}</option>
+                                              <option value={t('medium')}>{t('medium')}</option>
+                                              <option value={t('high')}>{t('high')}</option>
+                                          </select>
+                                      </label>
+                                  </div>
+                                  <div className="col-3 mb-3">
+                                      <label className="form-label">{t('weight')}
+                                          <input type="number" value={weight} min={0} max={100} onChange={handleWeight} className="form-control" />
+                                      </label>
+                                  </div>
+                                  <div className="col-3 mb-3">
+                                      <label className="form-label">{t('healthLevel')}
+                                          <select className="form-select" aria-label="Default select example" onChange={handleHealth}>
+                                          <option value={t('low')}>{t('low')}</option>
+                                              <option value={t('medium')}>{t('medium')}</option>
+                                              <option value={t('high')}>{t('high')}</option>
+                                          </select>
+                                      </label>
+                                  </div>
+                              </div>
+                              <div className="row">
+                                  <div className="col-6 mb-3">
+                                      <label className="form-label">{t('age')}
+                                          <input type="number" value={age} min={0} max={100} onChange={handleAge} className="form-control" />
+                                      </label>
+                                  </div>
+                                  <div className="col-6  mb-3">
+                                      <label className="form-label">{t('Imglink')}
+                                          <input type="text" value={img} onChange={handleImg} className="form-control" />
+                                      </label>
+                                  </div>
+                              </div>
+                          </div>
+          <div className="modal-footer">
+            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={handleClose}>{t('close')}</button>
+            <button type="button" className="btn btn-primary" onClick={handleClick}>{t('saveChanges')}</button>
           </div>
         </div>
       </div>
-    </>
+    </div>
+  </>
   );
 }
