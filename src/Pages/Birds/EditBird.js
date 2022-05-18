@@ -1,21 +1,20 @@
-import { useDispatch } from "react-redux";
+import { useDispatch , useSelector } from "react-redux";
 import { useState } from "react";
 import { birdUpdated } from "../../redux/BirdSlice";
 import { useTranslation } from 'react-i18next';
 export default function EditBird({ name_}) {
-
  
-
+  const birds = useSelector((state) => state.birds);
   const dispatch = useDispatch();
 
   const { t } = useTranslation();
 
-  const [name, setName] = useState("");
-  const [food, setFood] = useState("");
-  const [weight, setWeight] = useState("");
-  const [health, setHealth] = useState("");
-  const [age, setAge] = useState("");
-  const [img, setImg] = useState("");
+  const [name, setName] = useState(birds.name);
+  const [food, setFood] = useState(birds.food);
+  const [weight, setWeight] = useState(birds.weight);
+  const [health, setHealth] = useState(birds.health);
+  const [age, setAge] = useState(birds.age);
+  const [img, setImg] = useState(birds.img);
 
   
   function handleName(e) { setName(e.target.value) };
@@ -38,7 +37,7 @@ export default function EditBird({ name_}) {
           img: img,
         })
       );
-    }
+    }else{  alert("Fill in all fields");}
     setName("");
     setFood("");
     setWeight("");
@@ -72,51 +71,51 @@ export default function EditBird({ name_}) {
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div className="modal-body">
-                                <div className="row">
-                                    <div className="col-3 mb-3">
-                                        <label className="form-label">{t('name')}
-                                            <input type="text" value={name} onChange={handleName} className="form-control" />
-                                        </label>
-                                    </div>
-                                    <div className="col-3 mb-3">
-                                        <label className="form-label">{t('foodLevel')}
-                                            <select className="form-select" aria-label="Default select example" onChange={handleFood}>
-                                                <option value={t('low')}>{t('low')}</option>
-                                                <option value={t('medium')}>{t('medium')}</option>
-                                                <option value={t('high')}>{t('high')}</option>
-                                            </select>
-                                        </label>
-                                    </div>
-                                    <div className="col-3 mb-3">
-                                        <label className="form-label">{t('weight')}
-                                            <input type="number" value={weight} min={0} max={100} onChange={handleWeight} className="form-control" />
-                                        </label>
-                                    </div>
-                                    <div className="col-3 mb-3">
-                                        <label className="form-label">{t('healthLevel')}
-                                            <select className="form-select" aria-label="Default select example" onChange={handleHealth}>
-                                            <option value={t('low')}>{t('low')}</option>
-                                                <option value={t('medium')}>{t('medium')}</option>
-                                                <option value={t('high')}>{t('high')}</option>
-                                            </select>
-                                        </label>
-                                    </div>
+                            <div className="row">
+                                <div className="col-lg-3 col-sm-8 mb-3">
+                                    <label className="form-label">{t('name')}
+                                        <input type="text" value={name} onChange={handleName} className="form-control" />
+                                    </label>
                                 </div>
-                                <div className="row">
-                                    <div className="col-6 mb-3">
-                                        <label className="form-label">{t('age')}
-                                            <input type="number" value={age} min={0} max={100} onChange={handleAge} className="form-control" />
-                                        </label>
-                                    </div>
-                                    <div className="col-6  mb-3">
-                                        <label className="form-label">{t('Imglink')}
-                                            <input type="text" value={img} onChange={handleImg} className="form-control" />
-                                        </label>
-                                    </div>
+                                <div className="col-lg-3 col-sm-8 mb-3">
+                                    <label className="form-label">{t('foodLevel')}
+                                        <select className="form-select" aria-label="Default select example" onChange={handleFood}>
+                                            <option value={t('low')}>{t('low')}</option>
+                                            <option value={t('medium')}>{t('medium')}</option>
+                                            <option value={t('high')}>{t('high')}</option>
+                                        </select>
+                                    </label>
+                                </div>
+                                <div className="col-lg-3 col-sm-8 mb-3">
+                                    <label className="form-label">{t('weight')}
+                                        <input type="number" value={weight} min={0} max={100} onChange={handleWeight} className="form-control" />
+                                    </label>
+                                </div>
+                                <div className="col-lg-3 col-sm-8 mb-3">
+                                    <label className="form-label">{t('healthLevel')}
+                                        <select className="form-select" aria-label="Default select example" onChange={handleHealth}>
+                                        <option value={t('low')}>{t('low')}</option>
+                                            <option value={t('medium')}>{t('medium')}</option>
+                                            <option value={t('high')}>{t('high')}</option>
+                                        </select>
+                                    </label>
                                 </div>
                             </div>
+                            <div className="row">
+                                <div className="col-lg-6 col-sm-8">
+                                    <label className="form-label">{t('age')}
+                                        <input type="number" value={age} min={0} max={100} onChange={handleAge} className="form-control" />
+                                    </label>
+                                </div>
+                                <div className="col-lg-6 col-sm-8">
+                                    <label className="form-label">{t('Imglink')}
+                                        <input type="text" value={img} onChange={handleImg} className="form-control" />
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
             <div className="modal-footer">
-              <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={handleClose}>{t('edit')}</button>
+              <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={handleClose}>{t('cancel')}</button>
               <button type="button" className="btn btn-primary" onClick={handleClick}>{t('saveChanges')}</button>
             </div>
           </div>

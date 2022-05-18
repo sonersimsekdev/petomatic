@@ -10,12 +10,17 @@ import Cat from './Pages/Cat';
 import Dog from './Pages/Dog';
 import Bird from './Pages/Bird';
 import Navbar from './Components/Navbar';
+import ProtectedRoutes from "./Components/ProtectedRoutes";
+import Home from './Pages/Home';
 import SignIn from './Pages/SignIn';
 function App() {
   return (
+    
     <BrowserRouter>
+    
     <Navbar />
       <Routes>
+          <Route path="/" element={<Home />} />
           <Route path="/login" element={<SignIn />} />
           <Route path="/fish" element={<Fish />} />
           <Route path="/cat" element={<Cat />} />

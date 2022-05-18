@@ -61,17 +61,17 @@ export default function AddFish() {
                 <div className="modal-dialog">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h5 className="modal-title" id="staticBackdropLabel">{t('addFish')}</h5>
+                            <span className="modal-title" id="staticBackdropLabel">{t('addFish')}</span>
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
                             <div className="row">
-                                <div className="col-3 mb-3">
+                                <div className="col-lg-3 col-sm-8 mb-3">
                                     <label className="form-label">{t('name')}
                                         <input type="text" value={name} onChange={handleName} className="form-control" />
                                     </label>
                                 </div>
-                                <div className="col-3 mb-3">
+                                <div className="col-lg-3 col-sm-8 mb-3">
                                     <label className="form-label">{t('foodLevel')}
                                         <select className="form-select" aria-label="Default select example" onChange={handleFood}>
                                             <option value={t('low')}>{t('low')}</option>
@@ -80,12 +80,12 @@ export default function AddFish() {
                                         </select>
                                     </label>
                                 </div>
-                                <div className="col-3 mb-3">
+                                <div className="col-lg-3 col-sm-8 mb-3">
                                     <label className="form-label">{t('weight')}
                                         <input type="number" value={weight} min={0} max={100} onChange={handleWeight} className="form-control" />
                                     </label>
                                 </div>
-                                <div className="col-3 mb-3">
+                                <div className="col-lg-3 col-sm-8 mb-3">
                                     <label className="form-label">{t('healthLevel')}
                                         <select className="form-select" aria-label="Default select example" onChange={handleHealth}>
                                         <option value={t('low')}>{t('low')}</option>
@@ -96,12 +96,12 @@ export default function AddFish() {
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="col-6 mb-3">
+                                <div className="col-lg-6 col-sm-8">
                                     <label className="form-label">{t('age')}
                                         <input type="number" value={age} min={0} max={100} onChange={handleAge} className="form-control" />
                                     </label>
                                 </div>
-                                <div className="col-6  mb-3">
+                                <div className="col-lg-6 col-sm-8">
                                     <label className="form-label">{t('Imglink')}
                                         <input type="text" value={img} onChange={handleImg} className="form-control" />
                                     </label>

@@ -26,7 +26,7 @@ export const  FishList = () => {
               <p className="card-text">{t('name')} {name}</p>
               <div className="d-flex flex-row flex-wrap gap-2 mb-1">
                 <button type="button" className="btn btn-primary disabled">{t('food')} : {food}</button>
-                <button type="button" className="btn btn-secondary disabled">{t('weight')}: {weight} kg</button>
+                <button type="button" className="btn btn-secondary disabled">{t('weight')}: {weight} gr</button>
                 <button type="button" className="btn btn-info disabled">{t('health')}: {health}</button>
                 <button type="button" className="btn btn-dark disabled">{t('age')} : {age}</button>
               </div>
