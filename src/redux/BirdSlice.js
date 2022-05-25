@@ -39,7 +39,7 @@ const birdsSlice = createSlice({
             state.push(action.payload);
         },
         birdUpdated(state, action) {
-            const {id, name, food, weight, health, age , img } = action.payload;
+            const {name, food, weight, health, age , img } = action.payload;
             const existingBird = state.find((bird) => bird.name === name);
             if (existingBird) {
                 existingBird.name = name;

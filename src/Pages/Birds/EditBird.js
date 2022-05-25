@@ -4,17 +4,17 @@ import { birdUpdated } from "../../redux/BirdSlice";
 import { useTranslation } from 'react-i18next';
 export default function EditBird({ name_}) {
  
-  const birds = useSelector((state) => state.birds);
+  const  bird = useSelector((state) => state.birds);
   const dispatch = useDispatch();
 
   const { t } = useTranslation();
 
-  const [name, setName] = useState(birds.name);
-  const [food, setFood] = useState(birds.food);
-  const [weight, setWeight] = useState(birds.weight);
-  const [health, setHealth] = useState(birds.health);
-  const [age, setAge] = useState(birds.age);
-  const [img, setImg] = useState(birds.img);
+  const [name, setName] = useState(bird.name);
+  const [food, setFood] = useState(bird.food);
+  const [weight, setWeight] = useState(bird.weight);
+  const [health, setHealth] = useState(bird.health);
+  const [age, setAge] = useState(bird.age);
+  const [img, setImg] = useState(bird.img);
 
   
   function handleName(e) { setName(e.target.value) };

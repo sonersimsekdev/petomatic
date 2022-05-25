@@ -48,7 +48,7 @@ const fishiesSlice = createSlice({
             state.push(action.payload);
         },
         fishUpdated(state, action) {
-            const {id, name, food, weight, health, age , img } = action.payload;
+            const {name, food, weight, health, age , img } = action.payload;
             const existingFish = state.find((fish) => fish.name === name);
             if (existingFish) {
                 existingFish.name = name;

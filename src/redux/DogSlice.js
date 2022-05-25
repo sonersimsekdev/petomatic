@@ -57,7 +57,7 @@ const dogsSlice = createSlice({
             state.push(action.payload);
         },
         dogUpdated(state, action) {
-            const {id, name, food, weight, health, age , img } = action.payload;
+            const {name, food, weight, health, age , img } = action.payload;
             const existingDog = state.find((dog) => dog.name === name);
             if (existingDog) {
                 existingDog.name = name;
