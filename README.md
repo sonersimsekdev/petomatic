@@ -1,5 +1,5 @@
 # Live Demo
-[Live Demo Petomatic]https://petomatic.vercel.app/).
+[Live Demo Petomatic](https://petomatic.vercel.app/).
 
 # Getting Started with Create React App
 
